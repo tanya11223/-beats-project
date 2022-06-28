@@ -1,0 +1,58 @@
+.footer{
+  position: absolute;
+  background: #fff;
+  display: flex; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: rem(86px);
+  color: $primary-color;
+}
+
+.footer__container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  @include phones{
+    flex-direction: column;
+  }
+
+}
+.footer__col{
+  display: flex;
+  flex: 1;
+  margin-top: rem(20px);
+
+  &--left{
+    justify-content: flex-start;
+    align-items: center;
+
+    @include phones{
+      justify-content: center;
+    }
+  }
+
+  &--right{
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.contact{
+  @include phones{
+    margin-bottom: rem(18px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.contact__info{
+  font-size: rem(18px);
+  font-family: $font-stack2;
+}
+
+
+
+

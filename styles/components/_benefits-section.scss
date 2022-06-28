@@ -1,0 +1,10 @@
+.benefits-section{
+  position: relative;
+
+  &::before{
+    content: url(../img/decoration.png);
+    position: absolute;
+    bottom: -1.4rem;
+    left: 5%;
+  }
+}

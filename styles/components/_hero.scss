@@ -1,0 +1,95 @@
+.hero{
+
+  background-color:#F5F5F5;
+  height: 100vh;
+  min-height: 40.7rem;
+  position: relative;
+
+  @include tablets{
+    height: fit-content;
+    min-height: 100vh;
+  }
+
+  @include phones{
+    height: fit-content;
+    min-height: 100vh;
+  }
+
+  &::before{
+    position: absolute;
+    bottom: -1.6rem;
+    right: 5%;
+    content: url(../img/Rectangle.png) ;
+  }
+}
+
+.hero__container{
+  background: url(../img/hero.png) right center / 50% auto no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 1.5rem;
+  padding-bottom: 4.4rem; 
+
+  @include tablets {
+    background: none;
+  }
+}
+
+.hero__title-section{
+  width: 46%;
+
+  @include tablets{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+&::before{
+  content: "";
+  width: rem(323px);
+  height: rem(323px);
+  background: url(../img/tablets/tablet-headphones.png) center center / contain no-repeat;
+
+}
+
+}
+
+
+.hero__icons-section{
+  @include tablets{
+    display: none;
+  }
+  @include phones{
+    display: none;
+  }
+}
+
+.hero__main-title{
+  font-family: $font-stack2;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 1.4rem;
+}
+
+.hero__title-desc{
+  font-size: 1.4rem;
+  margin-bottom: 2.25rem;
+  padding-right: 10%;
+
+  @include tablets{
+    padding: 0 25%;
+  }
+
+  @include phones{
+    padding: 0 17%;
+  }
+}
+
