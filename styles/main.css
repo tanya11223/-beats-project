@@ -1037,3 +1037,7 @@ img {
   border-radius: 50%;
   margin-right: 0.625rem;
 }
+
+.dropdown__list {
+  display: none;
+}
