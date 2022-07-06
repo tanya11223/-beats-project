@@ -11,6 +11,7 @@ $primary-color: #292929;
 
 //z-indexes
 $z-fixed-menu: 100;
+$z-fullscreen-menu: 1000;
 
 //fonts
 $font-stack: 'Alegreya Sans', sans-serif;
@@ -49,3 +50,6 @@ $font-stack2: 'Play', sans-serif;
 @import "./components/socials";
 @import "./components/dropdown";
 @import "./components/product-section";
+@import "./components/product-slider";
+@import "./components/products";
+@import "./components/fullscreen-menu";

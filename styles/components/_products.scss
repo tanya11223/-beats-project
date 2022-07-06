@@ -1,0 +1,103 @@
+
+.product__container{
+  display: flex;
+
+  @include tablets {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.products__item{
+  display: flex;
+}
+
+.product__col{
+  display: flex;
+
+  &--left{
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablets{
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  &--right{
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 46%;
+  }
+
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @include phones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.product__photo__img{
+  margin-right: rem(59px);
+
+}
+
+.product__content{
+  text-align: left;
+}
+
+.product__title{
+  text-align: left;
+  margin-bottom: rem(24px);
+  line-height: 1.1;
+  width: 124%6;
+}
+
+.product__desc{
+  margin-bottom: rem(27px);
+}
+
+.product-feature__list{
+  display: flex;
+}
+
+.product-feature__item{
+  margin-right: rem(86px);
+  margin-bottom: rem(24px);
+
+  &:last-child{
+    margin-right: 0;
+  }
+
+}
+
+.product-feature__value{
+  font-family: $font-stack2;
+  font-weight: bold;
+  font-size: rem(18px);
+}
+
+.product__price{
+  display: flex;
+  align-items: center;
+}
+
+.product__price-value{
+  font-family: $font-stack2;
+  font-size: rem(36px);
+  margin-right: rem(13px);
+}
+
+
+

@@ -15,7 +15,9 @@
       <section class="hero">
         <div class="container hero__container">
           <header class="header">
-            <img src="./img/Vector.png" alt="beats logo" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" class="header__logo">
+              <use xlink:href="./sprite.svg#logo"></use>
+            </svg>
             <nav class="menu">
               <ul class="menu__list">
                 <li class="menu__item">
@@ -43,11 +45,13 @@
             </nav>
             <a href="tel:+78009039090" class="phone-number header__phone-number">
               <span class="phone-number__icon">
-                <img src="./img/phone.png" alt="phone icon" class="phone-number__icon-elem">
+                <svg xmlns="http://www.w3.org/2000/svg" class="phone-number__icon-elem">
+                  <use xlink:href="./sprite.svg#phone"></use>
+                </svg>
               </span>
               <span class="phone-number__text">8 800 903 90 90</span>
             </a>
-            <a href="#" class="hamburger">
+            <a href="#" class="hamburger" id="openOverlay">
               <span class="hamburger__plank"></span>
               <span class="hamburger__plank"></span>
               <span class="hamburger__plank"></span>
@@ -145,53 +149,76 @@
         </div>
       </section>
       <section class="section product-section">
-        <div class="container">
-         <div class="product-slider">
+        <div class="product-slider">
           <a href="#" class="product-slider__arrow product-slider__arrow--prev">
-            <svg xmlns="http://www.w3.org/2000/svg" class="product-slider__arrow-prev-icon">
-              <use xlink:href="./sprite.svg#prev"></use>
-            </svg>
+           <img src="./img/prev.png" alt="" class="product-slider__arrow__img--prev">
           </a>
           <a href="#" class="product-slider__arrow product-slider__arrow--next">
-            <svg xmlns="http://www.w3.org/2000/svg" class="product-slider__arrow-next-icon">
-              <use xlink:href="./sprite.svg#next"></use>
-            </svg>
+           <img src="./img/next.png" alt="" class="product-slider__arrow__img--next">
           </a>
          </div>
-         <ul class="products">
+        <div class="container product__container">
+         <ul class="products__list">
           <li class="products__item product">
-           <div class="product__container">
-             <div class="dropdown">
+            <div class="product__col product__col--left">            
+              <div class="product__photo">
+              <img src="./img/product-img.png" alt="white headphones" class="product__photo__img">
+            </div>
+          </div>
+          <div class="product__col product__col--right">
+            <div class="dropdown">
               <a href="#" class="dropdown__link">
                 <img src="./img/SVG/click.svg" alt="" class="dropdown__link__img">
               </a>
-              <ul class="dropdown__list">
-                <li class="dropdown__item">
-                  <svg class="dropdown__icon"></svg>
-                  <div class="dropdown__feature">Bluetooth</div>
-                  <div class="dropdown__feature__desc">4.0</div>
-                 </li>
-                 <li class="dropdown__item">
-                  <svg class="dropdown__icon"></svg>
-                  <div class="dropdown__feature">Дальность</div>
-                  <div class="dropdown__feature__desc">12 м</div>
-                 </li>
-                 <li class="dropdown__item">
-                  <svg class="dropdown__icon"></svg>
-                  <div class="dropdown__feature">Зарядка</div>
-                  <div class="dropdown__feature__desc">3 ч</div>
-                 </li>
-                 <li class="dropdown__item">
-                  <svg class="dropdown__icon"></svg>
-                  <div class="dropdown__feature">Вес</div>
-                  <div class="dropdown__feature__desc">215гр</div>
-                 </li>
-                 <li class="dropdown__item">
-                  <svg class="dropdown__icon"></svg>
-                  <div class="dropdown__feature">Гарантия</div>
-                  <div class="dropdown__feature__desc">1 год</div>
-                 </li>
-              </ul>
+              <div class="dropdown__menu">
+                <ul class="dropdown__list">
+                  <li class="dropdown__item">
+                    <svg class="dropdown__icon">
+                      <use xlink:href="./sprite.svg#bluetooth" ></use>
+                    </svg>
+                    <div class="dropdown__desc">
+                      <div class="dropdown__text">Bluetooth</div>
+                      <div class="dropdown__value">4.0</div>
+                    </div>
+                   </li>
+                   <li class="dropdown__item">
+                    <svg class="dropdown__icon">
+                      <use xlink:href="./sprite.svg#road"></use>
+                    </svg>
+                    <div class="dropdown__desc">
+                      <div class="dropdown__text">Дальность</div>
+                      <div class="dropdown__value">12 м</div>
+                    </div>
+                   </li>
+                   <li class="dropdown__item">
+                    <svg class="dropdown__icon">
+                      <use xlink:href="./sprite.svg#charger"></use>
+                    </svg>
+                    <div class="dropdown__desc">
+                      <div class="dropdown__text">Зарядка</div>
+                      <div class="dropdown__value">3 ч</div>
+                    </div>
+                   </li>
+                   <li class="dropdown__item">
+                    <svg class="dropdown__icon">
+                      <use xlink:href="./sprite.svg#weight"></use>
+                    </svg>
+                    <div class="dropdown__desc">
+                      <div class="dropdown__text">Вес</div>
+                      <div class="dropdown__value">215 гр</div>
+                    </div>
+                   </li>
+                   <li class="dropdown__item">
+                    <svg class="dropdown__icon">
+                      <use xlink:href="./sprite.svg#warranty"></use>
+                    </svg>
+                    <div class="dropdown__desc">
+                      <div class="dropdown__text">Гарантия</div>
+                      <div class="dropdown__value">1 год</div>
+                    </div>
+                   </li>
+                </ul>
+              </div>
              </div>
              <div class="product__content">
               <h2 class="section__title product__title">beats solo 3. цвет «атласное серебро»</h2>
@@ -203,17 +230,21 @@
               <ul class="product-feature__list">
                 <li class="product-feature__item">
                   <div class="product-feature__text">Зарядка</div>
-                  <div class="product-feature__desc">2  часа</div>
+                  <div class="product-feature__value">2  часа</div>
                 </li>
                 <li class="product-feature__item">
                   <div class="product-feature__text">Вес</div>
-                  <div class="product-feature__desc">215 грамм</div>
+                  <div class="product-feature__value">215 грамм</div>
                 </li>
               </ul>
-              <div class="product__price">14 990 ₽</div>
-              <a href="#" class="btn btn--theme--red">Заказать</a>
+              <div class="product__price">
+              <div class="product__price-value">14 990  р</div>
+               <div class="product__price-btn">
+              <button class="btn btn--theme--red">Заказать</button>
+               </div>
+              </div>
              </div>
-           </div>
+          </div>
           </li>
          </ul>
         </div>
@@ -349,7 +380,9 @@
                <div class="phone">
                 <a href="tel:+78009039090" class="phone-number footer__phone-number">
                   <span class="phone-number__icon">
-                    <img src="./img/phone.png" alt="phone icon" class="phone-number__icon-elem">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="phone-number__icon-elem">
+                      <use xlink:href="./sprite.svg#phone"></use>
+                    </svg>
                   </span>
                   <span class="phone-number__text">8 800 903 90 90</span>
                 </a>
@@ -427,5 +460,55 @@
     </ul>
   </nav>
 
+  <script type="html/template" id="overlayTemplate">
+    <div class="fullscreen-menu active">
+     <a href="#" class="fullscreen-menu__close" id="close">
+      <svg class="fullscreen-menu__close-icon">
+        <use xlink:href="./sprite.svg#cross"></use> 
+      </svg>
+     </a> 
+     <nav class="menu menu--vertical">
+      <nav class="menu menu--vertical">
+        <ul class="menu__list">
+            <li class="menu__item">
+                <a href="#" class="menu__link menu__link--vertical">
+                    О нас
+                </a>
+            </li>
+            <li class="menu__item">
+                <a href="#" class="menu__link menu__link--vertical">
+                    Наушники
+                </a>
+            </li>
+            <li class="menu__item">
+                <a href="#" class="menu__link menu__link--vertical">
+                    Команда
+                </a>
+            </li>
+            <li class="menu__item">
+                <a href="#" class="menu__link menu__link--vertical">
+                    Цвета
+                </a>
+            </li>
+            <li class="menu__item">
+                <a href="#" class="menu__link menu__link--vertical">
+                    Отзывы
+                </a>
+            </li>
+            <li class="menu__item">
+                <a href="#" class="menu__link menu__link--vertical">
+                    Как мы работаем 
+                </a>
+            </li>
+            <li class="menu__item">
+                <a href="#" class="menu__link menu__link--vertical">
+                    Контакты 
+                </a>
+            </li>
+        </ul>
+     </nav>
+    </div>
+  </script>
+  <script src="./js/menu.js"></script>
 </body>
 </html>
