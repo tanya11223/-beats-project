@@ -70,6 +70,10 @@
   @include tablets{
     color: $accent-color;
   }
+
+  @include phones{
+    color: $primary-color;
+  }
 }
 
 .phone-number__text{

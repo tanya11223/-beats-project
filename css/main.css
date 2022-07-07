@@ -326,6 +326,11 @@ img {
     color: #E01F3D;
   }
 }
+@media screen and (max-width: 480px) {
+  .phone-number {
+    color: #292929;
+  }
+}
 
 .phone-number__text {
   white-space: nowrap;
@@ -914,9 +919,6 @@ img {
 .fullscreen-menu__close-icon {
   fill: #fff;
 }
-.fullscreen-menu__close-icon:hover {
-  stroke: #8c51f6;
-}
 
 .hamburger {
   width: 26px;
@@ -1087,11 +1089,7 @@ img {
   border-radius: 50%;
   margin-right: 0.625rem;
 }
-@media screen and (max-width: 768px) {
-  .social-icon {
-    color: #E01F3D;
-  }
-}
+
 .dropdown {
   position: relative;
 }
