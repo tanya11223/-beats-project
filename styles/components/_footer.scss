@@ -41,6 +41,10 @@
   &--right{
     justify-content: flex-end;
     align-items: center;
+
+    @include pnones{
+      margin-top: 0;
+    }
   }
 }
 
@@ -56,10 +60,19 @@
 .contact__info{
   font-size: rem(18px);
   font-family: $font-stack2;
+
+  @include phones{
+    margin-bottom: rem(12px);
+  }
 }
 
 .footer__phone-number{
   margin: 0;
+
+  @include phones{
+    margin-bottom: rem(19px);
+  }
+  
 }
 
 .phone-number__icon-elem{
