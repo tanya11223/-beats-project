@@ -7,6 +7,10 @@
   right: 0;
   height: rem(86px);
   color: $primary-color;
+
+  @include phones{
+    height: rem(150px);
+  }
 }
 
 .footer__container{
@@ -16,6 +20,7 @@
   
   @include phones{
     flex-direction: column;
+   
   }
 
 }

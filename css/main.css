@@ -978,6 +978,11 @@ img {
   height: 5.375rem;
   color: #292929;
 }
+@media screen and (max-width: 480px) {
+  .footer {
+    height: 9.375rem;
+  }
+}
 
 .footer__container {
   display: -webkit-box;
