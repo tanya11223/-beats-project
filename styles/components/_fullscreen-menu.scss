@@ -12,6 +12,8 @@
   @include tablets {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     z-index: $z-fullscreen-menu;
   }
 
@@ -26,6 +28,9 @@
   display: flex;
   justify-content: flex-end;
   margin: rem(42px) rem(42px);
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .fullscreen-menu__close-icon{

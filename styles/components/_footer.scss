@@ -53,6 +53,20 @@
   font-family: $font-stack2;
 }
 
+.footer__phone-number{
+  margin: 0;
+}
 
+.phone-number__icon-elem{
+  fill: $primary-color;
+
+  @include tablets{
+    fill: $accent-color;
+  }
+
+  @include phones{
+    fill: $primary-color;
+  }
+}
 
 

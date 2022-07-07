@@ -50,3 +50,11 @@
     transform: translate(-50%, -50%);
   }
 }
+
+.fullscreen-menu__close-icon{
+  fill: #fff;
+
+  &:hover{
+    stroke: #8c51f6;
+  }
+}

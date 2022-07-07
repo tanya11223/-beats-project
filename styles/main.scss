@@ -25,6 +25,7 @@ $font-stack2: 'Play', sans-serif;
 
 //setups
 @import "./layout/layout";
+@import "./components/section";
 
 //components
 @import "./components/hero";
@@ -32,7 +33,6 @@ $font-stack2: 'Play', sans-serif;
 @import "./components/features";
 @import "./components/feature";
 @import "./components/btn";
-@import "./components/section";
 @import "./components/headline";
 @import "./components/benefits";
 @import "./components/benefit";

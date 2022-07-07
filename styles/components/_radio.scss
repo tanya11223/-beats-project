@@ -31,13 +31,13 @@
   }
 
   &__visible{
-    width: 26px;
-    height: 26px;
+    width: rem(26px);
+    height: rem(26px);
     position: relative;
     background: #fff;
     border-radius: 50%;
-    margin-bottom: 20px;
-    margin-right: 10px;
+    margin-bottom: rem(20px);
+    margin-right: rem(10px);
 
     &:last-child{
       margin-right: 0;
@@ -45,8 +45,8 @@
 
     &::before{
       content: "";
-      width: 1.7rem;
-      height: 1.7rem;
+      width: 1rem;
+      height: 1rem;
       background: $accent-color;
       border-radius: 50%;
       position: absolute;

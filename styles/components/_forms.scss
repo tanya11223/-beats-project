@@ -8,6 +8,10 @@
     &:last-child{
       margin-right: 0;
     }
+
+    @include tablets{
+      margin-right: 0;
+    }
   }
 
   &__row{
@@ -27,7 +31,7 @@
   &__input{
     width: 100%;
     border: 0.2rem solid transparent;
-    padding: 1.2rem 4.25rem 1.25rem 0.75rem;
+    padding: 0;
     border-radius: 0.25rem;
 
     &:focus{
@@ -36,8 +40,6 @@
     }
 
     &--textarea{
-      width: rem(450px);
-      height: 9.5rem;
       resize: none;
   }
 }
@@ -85,11 +87,10 @@
 }
 
 .form__input--textarea{
+  height: rem(150px);
+
   @include tablets{
-    height: auto;
-    width: rem(466px);
+    height: rem(150px);
 }
-  @include phones {
-    width: 30.75rem;
-  }
+
 }

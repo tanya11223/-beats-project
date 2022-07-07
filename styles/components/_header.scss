@@ -11,21 +11,30 @@
 }
 
 .menu{
-  margin: 0 30px;
-  padding-top: 5px;
-}
+  margin: 0 rem(30px);
+  padding-top: rem(5px);
 
-.menu{
   @include tablets {
     display: none;
+
+  &--vertical{
+    display: block;
+  }
+
   }
 }
+
 
 .menu__list {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+
+  @include tablets{
+    flex-direction: column;
+    margin-right: 0;
+  }
 }
 
 .menu__item{
@@ -39,6 +48,11 @@
 .menu__link{
   font-size: 1.2rem;
   white-space: nowrap;
+
+  @include tablets {
+    font-size: rem(36px);
+    font-family: $font-stack2;
+  }
 }
 
 .menu__link--vertical{

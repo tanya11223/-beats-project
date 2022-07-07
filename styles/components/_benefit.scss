@@ -53,9 +53,8 @@
 
 .benefit__desc{
   font-family: $font-stack2;
-  width: 15.5rem;
 
   @include phones{
-    width: 18.5rem;
+    font-size: 3.33333vmin;
   }
 }
