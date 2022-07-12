@@ -1,3 +1,18 @@
+.reviews__item.active{
+  position: static; 
+  opacity: 1; 
+  pointer-events: unset;
+}
+
+.reviews__item{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
 .reviews__display{
  background: #F8FAF9;
  padding: 2.75rem 6.7rem 2.7rem 2.7rem;
@@ -21,6 +36,8 @@
   top: -4.1rem;
  }
 }
+
+
 
 .reviews__display--inner{
   display: flex;

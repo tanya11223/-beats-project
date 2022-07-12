@@ -1,5 +1,5 @@
 
-.interactive-avatar__img{
+.interactive-avatar{
   width: 4.7rem;
   height: 4.7rem;
   border: 0.25rem solid transparent;
@@ -7,7 +7,18 @@
   overflow: hidden;
   position: relative;
 
-  &--active{
-    border-color: $accent-color;
+  &.active{
+    height: 4.625rem;
+    width: 4.625rem;
+    border-radius: 50%;
+    border: 0.25rem solid #E01F3D;
+    overflow: hidden;
+    position: relative;
   }
 }
+
+
+
+
+
+

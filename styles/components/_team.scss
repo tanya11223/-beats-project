@@ -1,0 +1,87 @@
+.team--version--desktop .team__content{
+  position: absolute;
+  top: 100%;
+}
+
+.team{
+  display: flex;
+  justify-content: space-between;
+
+  &__item{
+    flex: 1;
+    text-align: center;
+    margin-right: rem(20px);
+    max-width: rem(220px);
+    position: relative;
+
+    &:last-child{
+      margin-right: 0;
+    }
+
+    @include tablets{
+      margin-right: 0;
+    }
+  }
+
+  &__title{
+    font-size: rem(18px);
+    font-weight: 700;
+    font-family: $font-stack2;
+    margin-bottom: rem(11px);
+    align-items: center;
+
+    &:after{
+      content: url("data:image/svg+xml,%3Csvg width='8' height='7' viewBox='0 0 8 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 7L0.102887 0.249999L7.89711 0.25L4 7Z' fill='%23E01F3D'/%3E%3C/svg%3E");
+      margin-left: rem(2px);
+      position: absolute;
+      top: 90%;
+    }
+    
+    @include tablets{
+      font-size: rem(21px);
+
+      &:after{ 
+        content: url("data:image/svg+xml,%3Csvg width='8' height='7' viewBox='0 0 8 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 7L0.102887 0.249999L7.89711 0.25L4 7Z' fill='%23365A49'/%3E%3C/svg%3E");
+        margin-left: 2px;
+        position: absolute;
+        top: 0%;
+      }
+    }
+  }
+
+  &__content-block{
+    font-family: $font-stack2;
+    padding-bottom: rem(5px);
+  }
+
+  &__desc{
+    color: #6666;
+  }
+
+  @include tablets{
+    &--version--desktop{
+      display: none;
+    }
+  }
+}
+
+.team__member__img{
+  margin-bottom: rem(25px);
+}
+
+.team__content{
+  overflow: hidden;
+  transition: height .3s;
+  height: 0;
+}
+
+.team--version--mobile{
+  display: none;
+
+  @include tablets{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10%;
+  }
+}

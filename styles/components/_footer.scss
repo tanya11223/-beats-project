@@ -41,10 +41,6 @@
   &--right{
     justify-content: flex-end;
     align-items: center;
-
-    @include pnones{
-      margin-top: 0;
-    }
   }
 }
 
