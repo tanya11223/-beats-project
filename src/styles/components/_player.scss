@@ -1,0 +1,101 @@
+.player-section{
+  position: relative;
+  background: #F8FAF9;
+
+  &::after{
+    content: url(../img/polygon.svg);
+    position: absolute;
+    bottom: -3%;
+    right: 6%;
+    z-index: 1;
+  }
+}
+
+.player-section__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.player{
+  width: rem(662px);
+  height: rem(392px);
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include tablets{
+    width: rem(594px);
+    height: rem(352px);
+  }
+
+  @include phones{
+    width: rem(394px);
+    height: rem(233px);
+  }
+
+  &__wrapper{
+    width: 100%;
+    height: 92%;
+    background: white;
+    display: block;
+  }
+
+  &__controls{
+    width: 100%;
+    height: 8%;
+    background: #151515;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;  
+}
+
+  &__start{
+    display: block;
+    width: rem(11px);
+    height: rem(16px);
+    padding: rem(9px) rem(17px);
+    background: url(../img/player-start.svg) no-repeat center center;
+}
+
+&__playback{
+  display: block;
+  position: relative;
+  width: 85%;
+}
+
+&__volume{
+  display: block;
+  width: rem(11px);
+  height: rem(16px);
+  padding: rem(9px) rem(17px);
+  background: url(../img/volume.svg) no-repeat center center;
+}
+
+&__volumechange {
+  display: block;
+  margin-right: rem(20px);
+  position: relative;
+  width: 15%;
+}
+
+}
+
+.player__start.paused {
+  display: block;
+  width: rem(11px);
+  height: rem(16px);
+  padding: rem(9px) rem(17px);
+  background: url(../img/pause.svg) no-repeat center center;
+}
+
+#seek-bar {
+  background: linear-gradient(90deg, #E01F3D 0%, #333333 100%);
+}
+
+#yt-player{
+  width: inherit;
+}

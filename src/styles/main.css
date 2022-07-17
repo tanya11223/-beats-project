@@ -1,4 +1,4 @@
-@import url(./layout/normalize.css);
+@import url(../../css/normalize.css);
 html {
   font-size: 16px;
 }
@@ -1882,6 +1882,7 @@ img {
 }
 
 #seek-bar {
+  background: -webkit-gradient(linear, left top, right top, from(#E01F3D), to(#333333));
   background: linear-gradient(90deg, #E01F3D 0%, #333333 100%);
 }
 
