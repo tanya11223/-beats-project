@@ -20,8 +20,14 @@ function createModal () {
   closeElement.addEventListener("click", e => {
     e.preventDefault();
     body.removeChild(overlayElement);
-  }
-  )
+  });
+
+  overlayElement.addEventListener("click", (e) => {
+    e.preventDefault();
+    if(e.target.classList.contains('menu__link')) {
+      body.removeChild(overlayElement);
+    }
+  });
 
   return overlayElement;
 }

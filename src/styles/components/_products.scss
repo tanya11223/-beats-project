@@ -75,7 +75,8 @@
   text-align: left;
   margin-bottom: rem(24px);
   line-height: 1.1;
-  width: 124%;
+  font-size: rem(36px);
+  
 
   @include tablets{
     text-align: center;

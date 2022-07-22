@@ -1,3 +1,5 @@
+(()=>{
+
 const mesureWidth = item => {
   let reqItemWidth = 0;
   const screenWidth = $(window).width();
@@ -10,11 +12,16 @@ const mesureWidth = item => {
   const paddingRight = parseInt(textContainer.css("padding-right"));
 
 
-  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  const isTablet = window.matchMedia("(max-width: 768px)").matches;
+  const isMobile = window.matchMedia("(max-width: 480px)").matches;
 
-  if(isMobile) {
+  if(isTablet) {
     reqItemWidth = screenWidth - titlesWidth;
-  } else {
+  } 
+  if(isMobile) {
+    reqItemWidth = screenWidth - titlesBlocks.width();
+  } 
+  if(!isTablet && !isMobile){
     reqItemWidth = 500;
   }
 
@@ -22,17 +29,14 @@ const mesureWidth = item => {
     container: reqItemWidth,
     textContainer: reqItemWidth - paddingRight - paddingLeft
   }
-
 };
 
 const closeEveryItemInContainer = container => {
   const items = container.find(".color__item");
   const content = container.find(".color__content");
-  const textBlock = items.find(".color__container");
 
-  items.removeClass(".active");
+  items.removeClass("active");
   content.width(0);
-  textBlock.width(req.Width.textContainer);
 };
 
 const openItem = item => {
@@ -58,3 +62,4 @@ $(".color__title").on("click", (e) =>{
     openItem(item);
   }
 });
+})();

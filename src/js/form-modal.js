@@ -32,7 +32,7 @@ $(".form").submit(e => {
 
   if (isValid) {
     const request = $.ajax({
-      url: "ttps://webdev-api.loftschool.com/sendmail",
+      url: "https://webdev-api.loftschool.com/sendmail",
       method: "post",
       data: {
         name: name.val(),

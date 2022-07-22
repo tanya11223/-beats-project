@@ -1,37 +1,55 @@
-.product-slider{
-  position:relative;
-
-  @include tablets{
-    position: relative;
-  }
+.product__container{
+  position: relative;
 }
 
 .bx-wrapper {
   border: 0;
   background: transparent;
   box-shadow: none;
+  margin-bottom: 0;
 }
 
 
-.product-slider__arrows{
+.product-slider__arrow{
   background: url(../../img/SVG/next.svg) center center no-repeat;
   background-size: contain;
   display: block;
   width: rem(13px);
   height: rem(27px);
   position: absolute;
-  top: 50%;
+  top: 44%;
   transform: translateY(-50%);
   z-index: 10;
+  transform-origin: 0 0;
+
+  @include tablets{
+    top: rem(170px);
+  }
 }
 
 .product-slider__arrow--next{
-  right: 0;
+  right: rem(-10px);
+
+  @include tablets{
+    right: rem(120px);
+  }
+
+  @include phones{
+    right: 0;
+  }
 }
 
 .product-slider__arrow--prev{
-  left: 0;
-  transform: rotate(-180deg);
+  left: rem(-10px);
+  transform: rotate(-180deg) translateY(-50%);
+
+  @include tablets{
+    left: rem(120px);
+  }
+
+  @include phones{
+    left: 0;
+  }
 }
 
 

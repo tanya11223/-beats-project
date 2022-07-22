@@ -4,7 +4,7 @@ const sidemenu = $(".fixed-menu");
 const menuItems = sidemenu.find(".fixed-menu__item");
 
 const mobileDetect = new MobileDetect(window.navigator.userAgent);
-const isMobile = MobileDetect.mobile();
+const isMobile = mobileDetect.mobile();
 
 let inscroll = false;
 
@@ -13,7 +13,7 @@ sections.first().addClass("active");
 const countSectionPosition = (sectionEq) => {
   const position = sectionEq * -100;
 
-  if (isNan(position)) {
+  if (isNaN(position)) {
     console.error("передано неверное значение в countSectionPosition");
     return 0;
   }
@@ -35,10 +35,10 @@ const performTransition = (sectionEq) => {
     const position = countSectionPosition(sectionEq);
 
   display.css({
-    transform: 'translateY(${position}%)'
+    transform: `translateY(${position}%)`
   });
   
-  resetActiveClassForItem(section.sectionEq, "active");
+  resetActiveClassForItem(sections, sectionEq, "active");
 
   setTimeout(() => {
      inscroll = false;
@@ -72,7 +72,7 @@ $(window).on("wheel", e => {
   const deltaY = e.originalEvent.deltaY;
   const scroller = viewportScroller();
   
-  if (delayY > 0)  {
+  if (deltaY > 0)  {
     scroller.next();
   }
 
@@ -101,14 +101,14 @@ $(window).on("keydown", e => {
 
 $(".wrapper").on("touchmove",e => e.preventDefault());
 
-$("[data-scroll-to]").click(e => {
+$(document).on("click", "[data-scroll-to]", e => {
   e.preventDefault();
 
   const $this = $(e.currentTarget);
   const target = $this.attr("data-scroll-to");
-  const reqSection = $("[data-section-id=${target}]");
+  const reqSection = $(`[data-section-id=${target}]`);
 
-  performTransition(reqSEction.index());
+  performTransition(reqSection.index());
 });
 
 //touch swipe 
@@ -124,6 +124,7 @@ $("body").swipe( {
 
     if (direction == "up") scrollDirection = "next";
     if (direction == "down") scrollDirection = "prev";
+    if (!scrollDirection) return;
     
     scroller[scrollDirection]();
   },

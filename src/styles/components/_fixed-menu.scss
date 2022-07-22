@@ -16,7 +16,7 @@
 .fixed-menu__item{
   margin-bottom: 12px;
 
-  &:active{
+  &--active{
     .fixed-menu__link{
       border-color: $accent-color;
 
