@@ -1,78 +1,84 @@
-(function() {
-  window.onload = function() {
+const playBtn = document.querySelector(".video__player-img");
+const video = document.getElementById('player');
+const playerPlayBrn = document.querySelector(".duration__img");
+const durationControl = document.getElementById('durationLevel');
+const soundControl = document.getElementById('micLevel');
+const soundBtn = document.getElementById('soundBtn');
+const dynamicBtn = document.getElementById('dynamic');
 
-    //Video 
-    const video = document.getElementById("yt-player");
+let intervalId;
+let soundLevel;
 
-    //Buttons
-    const playButton = document.getElementById("play-pause");
-    const muteButton = document.getElementById("mute");
+video.addEventListener("loadeddata", function() {
+  video.addEventListener('click', playStop);
 
-    //Sliders
-    const seekBar = document.getElementById("seek-bar");
-    const volumeBar = document.getElementById("volume-bar");
+  let playButtons = document.querySelectorAll('.play');
 
-    const rangeInputs = document.querySelectorAll('input[type="range"]');
+  for (let index = 0; index < playButtons.length; index++) {
+  playButtons[i].addEventListener('click', playStop);
+}
 
-    // Event listener for the play/pause button 
-    playButton.addEventListener("click", function() {
-      if (video.paused == true) {
-        //Play the video 
-        video.play();
+durationControl.min = 0;
+durationControl.value = 0;
+durationControl.max = video.duration;
+durationControl.addEventListener('input', setVideoDuration);
 
-        playButton.classList.add("paused");
-      } else {
-        //Paused the video 
-        video.pause();
+soundControl.min = 0;
+soundControl.max = 10;
+soundControl.value = soundControl.max;
+soundControl.addEventListener('input', changeSoundVolume);
 
-        playButton.classList.remove("paused");
-      }
-    });
+dynamicBtn.addEventListener('click', soundOf);
 
-    //Event listener for the mute button 
-    muteButton.addEventListener("click", function() {
-      if (video.muted == false) {
-        //mute the video
-        video.muted = true;
-      } else {
-        // Unmute the video
-        video.muted = false;
-      }
-    });
-
-    // Event listener for the seek bar
-    seekBar.addEventListener("change", function() {
-      //Calculate the new time
-      const time = video.duration * (seekBar.value / 100);
-
-      //Update the video time
-      video.currentTime = time;
-    });
-
-      // Update the seek bar as the video plays
-      video.addEventListener("timeupdate", function() {
-        // Calculate the slider value
-        const value = (100 / video.duration) * video.currentTime;
-
-         // Update the slider value
-         seekBar.value = value;
-      });
-
-     // Pause the video when the slider handle is being dragged
-     seekBar.addEventListener("mousedown", function() {
-      video.pause();
-  });
-    
-    // Play the video when the slider handle is dropped
-    seekBar.addEventListener("mouseup", function() {
-      video.play();
-  });
-
-   // Event listener for the volume bar
-   volumeBar.addEventListener("change", function() {
-     //update the video volume
-     video.volume = volumeBar.value;
-    
-   });
-  }
+video.addEventListener('ended', () => {
+  playBtn.classList.toggle('video__player-img--active');
+  playerPlayBrn.classList.remove('active');
+  video.currentTime = 0;
+})
 });
+
+function playStop() {
+  playerPlayBrn.classList.toggle('video__player-img--active');
+  playBtn.classList.toggle('active');
+  if (video.paused) {
+    video.play();
+    intervalId = setInterval(updateDuration, 1000 / 60);
+  } else{
+    clearInterval(intervalId);
+    video.pause();
+  }
+}
+
+function setVideoDuration() {
+  video.currentTime = durationControl.value;
+  updateDuration();
+}
+
+function updateDuration() {
+  durationControl.value = video.currentTime;
+  let step = video.duration / 100;
+  let percent = video.currentTime / step;
+  durationControl.style.background = `linear-gradient(90deg, #E01F3D 0%, #E01F3D ${percent}%, #333 ${percent}%)`;
+}
+
+function changeSoundVolume() {
+  video.volume = soundControl.value / 10;
+  if(video.volume == 0){
+    soundBtn.classList.add('active');
+  } else {
+    soundBtn.classList.remove('active');
+  }
+}
+
+function soundOf() {
+  if (video.volume === 0) {
+    video.volume = soundLevel;
+    soundControl.value = soundLevel * 10;
+    soundBtn.classList.remove('active');
+  } else {
+    soundLevel = video.volume;
+    video.volume = 0;
+    soundControl.value = 0;
+    soundBtn.classList.add('active');
+  }
+}
