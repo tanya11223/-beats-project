@@ -15,7 +15,7 @@ video.addEventListener("loadeddata", function() {
   let playButtons = document.querySelectorAll('.play');
 
   for (let index = 0; index < playButtons.length; index++) {
-  playButtons[i].addEventListener('click', playStop);
+  playButtons[index].addEventListener('click', playStop);
 }
 
 durationControl.min = 0;
@@ -37,7 +37,8 @@ video.addEventListener('ended', () => {
 })
 });
 
-function playStop() {
+function playStop(e) {
+  e.stopPropagation();
   playerPlayBrn.classList.toggle('video__player-img--active');
   playBtn.classList.toggle('active');
   if (video.paused) {
